@@ -98,7 +98,7 @@ interface PrettyOptions_ {
    * Ignore one or several keys.
    * @example "time,hostname"
    */
-  ignore?: string;
+  ignore?: string | string[];
   /**
    * Provides the ability to add a custom prettify function for specific log properties.
    * `customPrettifiers` is an object, where keys are log properties that will be prettified

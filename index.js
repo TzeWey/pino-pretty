@@ -53,7 +53,7 @@ function prettyFactory (options) {
   const errorLikeObjectKeys = opts.errorLikeObjectKeys
   const errorProps = opts.errorProps.split(',')
   const customPrettifiers = opts.customPrettifiers
-  const ignoreKeys = opts.ignore ? new Set(opts.ignore.split(',')) : undefined
+  const ignoreKeys = opts.ignore ? (typeof opts.ignore === 'string' ? new Set(opts.ignore.split(',')) : opts.ignore) : undefined
   const hideObject = opts.hideObject
   const singleLine = opts.singleLine
 

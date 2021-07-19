@@ -632,6 +632,13 @@ test('basic prettifier tests', (t) => {
     t.equal(arst, 'hello world\n')
   })
 
+  t.test('ignores time and level with ignore keys as string array', (t) => {
+    t.plan(1)
+    const pretty = prettyFactory({ ignore: ['time', 'level'] })
+    const arst = pretty(`{"msg":"hello world", "pid":"${pid}", "hostname":"${hostname}", "time":${epoch}, "level":30}`)
+    t.equal(arst, `(${pid} on ${hostname}): hello world\n`)
+  })
+
   t.test('prettifies trace caller', (t) => {
     t.plan(1)
     const traceCaller = (instance) => {

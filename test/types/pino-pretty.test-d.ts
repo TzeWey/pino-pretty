@@ -67,3 +67,8 @@ expectType<any>(PinoPrettyCjs(options));
 
 expectType<string>(pretty({ foo: "bar" }));
 expectType<string>(pretty('dummy'));
+
+const options_ignore_array: PinoPretty.PrettyOptions = {
+  ignore: ["foo", "bar"],
+};
+const pretty_ignore_array = prettyFactory(options_ignore_array);
